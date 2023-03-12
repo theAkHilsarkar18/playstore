@@ -8,6 +8,7 @@ class Baseprovider extends ChangeNotifier
 
   void navigationPosition(int value)
   {
-
+    i = value;
+    notifyListeners();
   }
 }

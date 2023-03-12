@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:playstore/screen/basescreen/provider/baseprovider.dart';
+import 'package:playstore/screen/gamescreen/tabscreen1/foryouscreen/view/foryouscreen.dart';
+import 'package:playstore/screen/gamescreen/tabscreen2/topchartscreen/view/topviewscreen.dart';
+import 'package:provider/provider.dart';
 
 class Basescreen extends StatefulWidget {
   const Basescreen({Key? key}) : super(key: key);
@@ -8,9 +12,15 @@ class Basescreen extends StatefulWidget {
   State<Basescreen> createState() => _BasescreenState();
 }
 
+Baseprovider? baseprovider;
+Baseprovider? baseproviderTrue;
+
 class _BasescreenState extends State<Basescreen> {
   @override
   Widget build(BuildContext context) {
+    baseprovider = Provider.of(context, listen: false);
+    baseproviderTrue = Provider.of(context, listen: true);
+
     return DefaultTabController(
       length: 4,
       child: SafeArea(
@@ -49,32 +59,107 @@ class _BasescreenState extends State<Basescreen> {
                   ],
                 ),
               ),
-             Container(
-               height: 50,
-               width: double.infinity,
-               decoration: BoxDecoration(
-                 color: Colors.white,
-                 border: Border(bottom: BorderSide(color: Colors.black12),),
-               ),
-               child: TabBar(
-                 indicatorColor: Colors.green,
-                 tabs: [
-                   Tab(child: Text("For you",style: GoogleFonts.lato(color: Colors.black54,fontSize: 12,fontWeight: FontWeight.w500,),),),
-                   Tab(child: Text("Top chart",style: GoogleFonts.lato(color: Colors.black54,fontSize: 12,fontWeight: FontWeight.w500,),),),
-                   Tab(child: Text("New",style: GoogleFonts.lato(color: Colors.black54,fontSize: 12,fontWeight: FontWeight.w500,),),),
-                   Tab(child: Text("Event",style: GoogleFonts.lato(color: Colors.black54,fontSize: 12,fontWeight: FontWeight.w500,),),),
-                 ],
-               ),
-             ),
+              Container(
+                height: 50,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border(
+                    bottom: BorderSide(color: Colors.black12),
+                  ),
+                ),
+                child: TabBar(
+                  indicatorColor: Colors.green,
+                  tabs: [
+                    Tab(
+                      child: Text(
+                        "For you",
+                        style: GoogleFonts.lato(
+                          color: Colors.black87,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                    Tab(
+                      child: Text(
+                        "Top chart",
+                        style: GoogleFonts.lato(
+                          color: Colors.black87,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                    Tab(
+                      child: Text(
+                        "New",
+                        style: GoogleFonts.lato(
+                          color: Colors.black87,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                    Tab(
+                      child: Text(
+                        "Event",
+                        style: GoogleFonts.lato(
+                          color: Colors.black87,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                height: 583,
+                width: double.infinity,
+                child: TabBarView(
+                  children:[
+                  Foryouscreen(),
+                  Topviewscreen(),
+                  Foryouscreen(),
+                  Foryouscreen(),
+                ],),
+              ),
             ],
           ),
           bottomNavigationBar: BottomNavigationBar(
+            selectedItemColor: Colors.green,
+            unselectedItemColor: Colors.grey.shade600,
             backgroundColor: Colors.white,
+            currentIndex: baseproviderTrue!.i,
+            onTap: (value) {
+              baseprovider!.navigationPosition(value);
+            },
             items: [
-              BottomNavigationBarItem(icon: Icon(Icons.sports_esports,color: Colors.black),label: "Games",backgroundColor: Colors.white),
-              BottomNavigationBarItem(icon: Icon(Icons.widgets_outlined,color: Colors.black),label: "Games",backgroundColor: Colors.white),
-              BottomNavigationBarItem(icon: Icon(Icons.theaters,color: Colors.black),label: "Games",backgroundColor: Colors.white),
-              BottomNavigationBarItem(icon: Icon(Icons.book,color: Colors.black),label: "Games",backgroundColor: Colors.white),
+              BottomNavigationBarItem(
+                  icon: Icon(
+                    Icons.sports_esports,
+                  ),
+                  label: "Games",
+                  backgroundColor: Colors.white),
+              BottomNavigationBarItem(
+                  icon: Icon(
+                    Icons.widgets_outlined,
+                  ),
+                  label: "Games",
+                  backgroundColor: Colors.white),
+              BottomNavigationBarItem(
+                  icon: Icon(
+                    Icons.theaters,
+                  ),
+                  label: "Games",
+                  backgroundColor: Colors.white),
+              BottomNavigationBarItem(
+                  icon: Icon(
+                    Icons.book,
+                  ),
+                  label: "Games",
+                  backgroundColor: Colors.white),
             ],
           ),
         ),
