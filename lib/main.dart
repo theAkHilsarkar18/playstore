@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:playstore/screen/appscreen/view/appscreen.dart';
 import 'package:playstore/screen/basescreen/provider/baseprovider.dart';
 import 'package:playstore/screen/basescreen/view/basescreen.dart';
 import 'package:playstore/screen/gamescreen/tabscreen1/foryouscreen/view/foryouscreen.dart';
@@ -19,6 +20,7 @@ void main()
           '/' : (context) => Basescreen(),
           'foryou' : (context) => Foryouscreen(),
           'topview' : (context) => Topviewscreen(),
+          'app' : (context) => Appliactionscreen(),
         },
       ),
     ),

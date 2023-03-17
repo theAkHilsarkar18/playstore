@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:playstore/screen/appscreen/view/appscreen.dart';
 import 'package:playstore/screen/basescreen/provider/baseprovider.dart';
 import 'package:playstore/screen/gamescreen/tabscreen1/foryouscreen/view/foryouscreen.dart';
 import 'package:playstore/screen/gamescreen/tabscreen2/topchartscreen/view/topviewscreen.dart';
@@ -119,7 +120,7 @@ class _BasescreenState extends State<Basescreen> {
                 width: double.infinity,
                 child: TabBarView(
                   children:[
-                  Foryouscreen(),
+                  baseproviderTrue!.navigationClick?Foryouscreen():Appliactionscreen(),
                   Topviewscreen(),
                   Foryouscreen(),
                   Foryouscreen(),
@@ -134,6 +135,7 @@ class _BasescreenState extends State<Basescreen> {
             currentIndex: baseproviderTrue!.i,
             onTap: (value) {
               baseprovider!.navigationPosition(value);
+              baseproviderTrue!.navigationOnClick();
             },
             items: [
               BottomNavigationBarItem(
