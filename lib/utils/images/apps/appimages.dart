@@ -19,3 +19,30 @@ List appLogo1 = [
   "assets/apps/snaplogo.jpg",
 ];
 
+List appImage2 = [
+  "assets/apps/hot.jpg",
+  "assets/apps/jio.jpg",
+  "assets/apps/pubg.jpg",
+];
+
+List appName2 = [
+  "Hotstar",
+  "Jiocinema",
+  "PubG Mobile",
+];
+
+List appLogo2 = [
+  "assets/apps/hotlogo.jpg",
+  "assets/apps/jiologo.webp",
+  "assets/apps/pubg.jpg",
+];
+
+List wcc2Img = [
+  "assets/open/w1.jpeg",
+  "assets/open/w2.webp",
+  "assets/open/w3.jpg",
+  "assets/open/w4.jpeg",
+];
+
+
+

@@ -5,6 +5,7 @@ import 'package:playstore/screen/basescreen/provider/baseprovider.dart';
 import 'package:playstore/screen/basescreen/view/basescreen.dart';
 import 'package:playstore/screen/gamescreen/tabscreen1/foryouscreen/view/foryouscreen.dart';
 import 'package:playstore/screen/gamescreen/tabscreen2/topchartscreen/view/topviewscreen.dart';
+import 'package:playstore/screen/openscreen/view/openscreen.dart';
 import 'package:provider/provider.dart';
 
 void main()
@@ -21,6 +22,7 @@ void main()
           'foryou' : (context) => Foryouscreen(),
           'topview' : (context) => Topviewscreen(),
           'app' : (context) => Appliactionscreen(),
+          'open' : (context) => Openscreen(),
         },
       ),
     ),

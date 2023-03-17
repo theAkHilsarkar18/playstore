@@ -102,30 +102,36 @@ class _ForyouscreenState extends State<Foryouscreen> {
   {
     return Padding(
       padding: const EdgeInsets.all(10.0),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            margin: EdgeInsets.all(5),
-            height: 110,
-            width: 110,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              color: Colors.white,
+      child: InkWell(
+        onTap: () {
+          Navigator.pushNamed(context, 'open');
+
+        },
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              margin: EdgeInsets.all(5),
+              height: 110,
+              width: 110,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.white,
+              ),
+              child: ClipRRect(borderRadius: BorderRadius.circular(20),child: Image.asset("${imgPath}",fit: BoxFit.cover)),
             ),
-            child: ClipRRect(borderRadius: BorderRadius.circular(20),child: Image.asset("${imgPath}",fit: BoxFit.cover)),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 15),
-            child: Text("${gName}",style: GoogleFonts.lato(fontSize: 10,color: Colors.black,letterSpacing: 1),),
-          ),
-          SizedBox(height: 5),
-          Padding(
-            padding: const EdgeInsets.only(left: 15),
-            child: Row(children: [Text("4.2",style: GoogleFonts.lato(fontSize: 8,color: Colors.black),),SizedBox(width: 5,),Icon(Icons.star,color: Colors.black54,size: 10,)]),
-          ),
-        ],
+            Padding(
+              padding: const EdgeInsets.only(left: 15),
+              child: Text("${gName}",style: GoogleFonts.lato(fontSize: 10,color: Colors.black,letterSpacing: 1),),
+            ),
+            SizedBox(height: 5),
+            Padding(
+              padding: const EdgeInsets.only(left: 15),
+              child: Row(children: [Text("4.2",style: GoogleFonts.lato(fontSize: 8,color: Colors.black),),SizedBox(width: 5,),Icon(Icons.star,color: Colors.black54,size: 10,)]),
+            ),
+          ],
+        ),
       ),
     );
   }
