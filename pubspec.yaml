@@ -67,8 +67,6 @@ flutter:
   assets:
     - assets/games/
     - assets/apps/
-    - assets/book/
-    - assets/movie/
     - assets/open/
 
   # An image asset can refer to one or more resolution-specific "variants", see
