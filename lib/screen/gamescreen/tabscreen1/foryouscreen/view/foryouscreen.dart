@@ -105,7 +105,6 @@ class _ForyouscreenState extends State<Foryouscreen> {
       child: InkWell(
         onTap: () {
           Navigator.pushNamed(context, 'open');
-
         },
         child: Column(
           mainAxisSize: MainAxisSize.min,

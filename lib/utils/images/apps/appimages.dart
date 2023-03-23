@@ -47,5 +47,15 @@ List wcc2Img = [
   "assets/open/w4.jpeg",
 ];
 
+List hotstarImg = [
+  "assets/open/h1.jpg",
+  "assets/open/h2.jpg",
+  "assets/open/h3.jpg",
+  "assets/open/h4.webp",
+  "assets/open/h5.webp",
+  "assets/open/lgo.jpg",
+];
+
+
 
 
